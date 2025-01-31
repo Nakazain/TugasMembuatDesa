@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function () {
-    return view('index');
+    return view('umah');
 });
 Route::get('/add', function () {
     return view('add');
