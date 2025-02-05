@@ -8,7 +8,8 @@ use Illuminate\Http\Request;
 class BeritaController extends Controller
 {
     public function index(){
-        return view('add');
+        $post = Berita::all();
+        return view('umah', compact('post'));
     }
     public function tambahdata(Request $request){
         $request->validate([

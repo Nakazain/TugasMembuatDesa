@@ -39,7 +39,8 @@
                 <img src="/storage/{{$item->gambar}}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{$item->judul}}</h5>
-                    <p class="card-text">{{$item->deskripsi}}</p>
+                    <p class="card-text">{{ \Carbon\Carbon::parse($item->created_at)->locale('id')->isoFormat('dddd, D MMMM Y | hh:mm') }} WIB</p>
+                    <p class="card-text line-clamp-1">{{$item->deskripsi}}</p>
                 </div> 
             </div>
             </a>

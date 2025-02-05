@@ -7,12 +7,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('umah');
-});
-Route::get('/add', function () {
-    return view('add');
-});
+
+Route::get('/', [App\Http\Controllers\BeritaController::class, 'index'])->name('index');
 
 Auth::routes();
 

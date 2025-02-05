@@ -67,24 +67,18 @@
 <div class="container">
   <h2 class="text-center mb-3">Kabar Ajibarang Kulon</h2>
   <div class="container text-center">
-  <div class="row">
-    <div class="col">
-      <img src="/img/tes.png" width="400px">
-      <h3 style="margin-top:10px">Judul Berita</h3>
-      <p>Oleh : Admin | 5 Febuari 2025</p>
-    </div>
-    <div class="col">
-      <img src="/img/tes.png" width="400px">
-      <h3 style="margin-top:10px">Judul Berita</h3>
-      <p>Oleh : Admin | 5 Febuari 2025</p>
-    </div>
-    <div class="col">
-      <img src="/img/tes.png" width="400px">
-      <h3 style="margin-top:10px">Judul Berita</h3>
-      <p>Oleh : Admin | 5 Febuari 2025</p>
+    <div class="row">
+      @foreach ($post as $item)
+      <div class="col-md-4 mb-3">
+        <a href="/detail/{{$item->id}}">
+          <img src="/storage/{{$item->gambar}}" width="100%" class="img-fluid">
+          <h3 class="mt-2">{{$item->judul}}</h3>
+          <p>Oleh : Admin | Pada : {{ \Carbon\Carbon::parse($item->created_at)->locale('id')->isoFormat('dddd, D MMMM Y') }}</p>
+        </a>
+      </div>
+      @endforeach
     </div>
   </div>
-</div>
 </div>
 </body>
 </html>
