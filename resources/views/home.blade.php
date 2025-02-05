@@ -22,19 +22,24 @@
                 <div class="card-body"><p style="font-size: 40px; font-weight:700; line-height:40px;">100</p></div>
             </div>
         </div>
+
+        <div class="d-flex justify-content-center">
+            <a href="/add" class="btn btn-outline-primary btn-lg" style="padding-inline: 100px; margin-top:15px">Tambah data</a>
+        </div>
+
     </div>
 </div>
 <div class="container mt-3">
 <div class="d-flex justify-content-start text-center">
     <div class="row align-items-start">
-        @foreach( $post as item)
+        @foreach ($post as $item)
         <div class="col">
-            <a href="#" class="text-decoration-none">
+            <a href="/detail/{{$item->id}}" class="text-decoration-none">
             <div class="card" style="width:100%;">
-                <img src="/img/tes.png" class="card-img-top" alt="...">
+                <img src="/storage/{{$item->gambar}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">Judul</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 class="card-title">{{$item->judul}}</h5>
+                    <p class="card-text">{{$item->deskripsi}}</p>
                 </div> 
             </div>
             </a>

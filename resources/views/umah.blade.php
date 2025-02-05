@@ -33,20 +33,25 @@
     </div>
   </div>
 </nav>
-<div style="background-color: gray; padding-block:200px; display:flex; justify-content:center">
-<h1 style="font-weight: 800;">Selamat datang di desa</h1>
+<div style="background-image: url('/img/bg.png'); background-size: cover; background-position: center; min-height: 100vh;" 
+     class="d-flex flex-column justify-content-center align-items-center text-center">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-10 col-lg-8">
+                <h1 class="fw-bold text-white mb-4 display-3">
+                    Selamat datang di desa
+                </h1>
+            </div>
+        </div>
+    </div>
 </div>
 <div class="container my-5">
         <div class="row align-items-center">
             <!-- Kolom Teks -->
             <div class="col-md-8">
-            <h2 class="text-danger mb-3 pb-2 border-bottom border-danger d-inline-block">
+            <h2 class="text-danger mb-3 pb-2 d-inline-block">
                 SAMBUTAN KEPALA DESA
             </h2>
-            <h3 class="text-dark mb-4 mt-3">John Doe, S.H.</h3>
-            <p class="lead text-secondary" style="line-height: 1.8;">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            </p>
         </div>
         <!-- Kolom Gambar -->
         <div class="col-md-4 text-center mb-4 mb-md-0">
@@ -58,6 +63,28 @@
             </div>
         </div>
     </div>
+</div>
+<div class="container">
+  <h2 class="text-center mb-3">Kabar Ajibarang Kulon</h2>
+  <div class="container text-center">
+  <div class="row">
+    <div class="col">
+      <img src="/img/tes.png" width="400px">
+      <h3 style="margin-top:10px">Judul Berita</h3>
+      <p>Oleh : Admin | 5 Febuari 2025</p>
+    </div>
+    <div class="col">
+      <img src="/img/tes.png" width="400px">
+      <h3 style="margin-top:10px">Judul Berita</h3>
+      <p>Oleh : Admin | 5 Febuari 2025</p>
+    </div>
+    <div class="col">
+      <img src="/img/tes.png" width="400px">
+      <h3 style="margin-top:10px">Judul Berita</h3>
+      <p>Oleh : Admin | 5 Febuari 2025</p>
+    </div>
+  </div>
+</div>
 </div>
 </body>
 </html>

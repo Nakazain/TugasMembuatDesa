@@ -17,5 +17,6 @@ Route::get('/add', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/add', [App\Http\Controllers\BeritaController::class, 'index'])->name('index');
-Route::post('/tambahdata', [App\Http\Controllers\BeritaController::class, 'tambahdata'])->name('tambahdata');
+Route::get('/add', [App\Http\Controllers\HomeController::class, 'add'])->name('add');
+Route::post('/tambahdata', [App\Http\Controllers\HomeController::class, 'tambahdata'])->name('tambahdata');
+Route::get('/detail/{id}', [App\Http\Controllers\HomeController::class, 'detail'])->name('detail');

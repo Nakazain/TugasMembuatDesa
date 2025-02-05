@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Berita;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -22,7 +23,32 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-        return view('home');
+    {   
+        $post = Berita::all();
+        return view('home', compact('post'));
     }
+
+    public function add(){
+        return view('add');
+    }
+
+    public function tambahdata(Request $request){
+        $request->validate([
+            'judul'=>('required'),
+            'deskripsi'=>('required'),
+            'gambar'=>'image|mimes:jpeg,png,jpg,giv,svg',
+        ]);
+        $imagePath = $request->file('gambar')->store('berita', 'public');
+        Berita::create([
+            'judul' => $request->judul,
+            'deskripsi' => $request->deskripsi,
+            'gambar' => $imagePath,
+        ]);
+        return redirect('home');
+    }
+
+    public function detail($id){   
+        $post = Berita::findOrFail($id);
+        return view('detail', compact('post'));
+        }
 }
