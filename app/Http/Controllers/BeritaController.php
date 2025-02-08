@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class BeritaController extends Controller
 {
     public function index(){
-        $post = Berita::all();
+        $post = Berita::paginate(3);
         return view('umah', compact('post'));
     }
     public function tambahdata(Request $request){

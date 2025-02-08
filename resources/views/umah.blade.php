@@ -17,9 +17,10 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary" style="margin-inline: 1%;">
+<nav class="navbar navbar-expand-lg bg-body-tertiary" style="position:sticky; top:0; z-index:100;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
+    <img src="/img/logo.png" alt="Logo Banyumas" width="40px" style="margin-right: 10px">
+    <a class="navbar-brand" href="#">Pemerintah Desa<br>Ajibarang Wetan</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -70,7 +71,7 @@
     <div class="row">
       @foreach ($post as $item)
       <div class="col-md-4 mb-3">
-        <a href="/detail/{{$item->id}}">
+        <a href="/detail/{{$item->id}}" class="text-decoration-none" style="color:black">
           <img src="/storage/{{$item->gambar}}" width="100%" class="img-fluid">
           <h3 class="mt-2">{{$item->judul}}</h3>
           <p>Oleh : Admin | Pada : {{ \Carbon\Carbon::parse($item->created_at)->locale('id')->isoFormat('dddd, D MMMM Y') }}</p>
@@ -78,6 +79,7 @@
       </div>
       @endforeach
     </div>
+      {{$post->links('pagination::bootstrap-5')}}
   </div>
 </div>
 </body>

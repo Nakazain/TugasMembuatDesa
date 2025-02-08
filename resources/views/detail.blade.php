@@ -21,7 +21,7 @@
       <h1>{{$post->judul}}</h1>
       <img src="/storage/{{$post->gambar}}" alt="{{$post->judul}}" width="600px" style="border-radius: 10px;">
       <p>{{ \Carbon\Carbon::parse($post->created_at)->locale('id')->isoFormat('dddd, D MMMM Y | hh:mm') }} WIB</p>
-      <p class="fs-3">{{$post->deskripsi}}</p>
+      <p>{{$post->deskripsi}}</p>
   </div>
 </body>
 </html>

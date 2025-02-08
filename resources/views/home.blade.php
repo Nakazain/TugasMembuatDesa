@@ -33,7 +33,7 @@
 <div class="d-flex justify-content-start text-center">
     <div class="row align-items-start">
         @foreach ($post as $item)
-        <div class="col">
+        <div class="col-md-4 mb-3">
             <a href="/detail/{{$item->id}}" class="text-decoration-none">
             <div class="card" style="width:100%;">
                 <img src="/storage/{{$item->gambar}}" class="card-img-top" alt="...">
